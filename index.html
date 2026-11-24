@@ -9,15 +9,25 @@
   :root {
     --bg: #faf6ef; --fg: #2b2622; --muted: #7a6f64;
     --accent: #b3342b; --card: #ffffff; --line: #e6dccd;
+    --font: Arial, Helvetica;
   }
-  /*@media (prefers-color-scheme: dark) {
-    :root { --bg: #1d1a17; --fg: #f1e9dd; --muted: #a79a8a;
-            --accent: #e5675c; --card: #28241f; --line: #3a342d; }
-  }*/
+  :root[data-lang="tokipona"] {
+    --bg: #faf6ef; --fg: #2b2622; --muted: #7a6f64;
+    --accent: #b3342b; --card: #ffffff; --line: #e6dccd;
+    --font: 'SitelenPona', sans-serif;
+  }
+  :root[data-lang="klingonisch"] {
+    --bg: #1a1214; --fg: #f0e6e6; --card: #2a1c1f;
+    --line: #4a2b30; --muted: #b59a9a; --accent: #d4382c;
+  }
+  :root[data-lang="georgisch"] {
+    --bg: #fbf3f3; --accent: #a4122b;
+  }
+
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--bg); color: var(--fg);
-    font: 18px/1.65 Arial, Helvetica, sans-serif;
+    font: 18px/1.65 var(--font);
   }
   main { max-width: 38rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
   h1 { font-size: 2.2rem; line-height: 1.15; margin: 1.5rem 0 .3rem; }
@@ -42,7 +52,8 @@
        text-transform: uppercase; letter-spacing: .04em; }
   td:first-child { font-weight: 600; }
   .todo { color: var(--muted); font-style: italic; }
-  footer { margin-top: 3rem; color: var(--muted); font-size: .85rem; text-align: center; }
+  footer { margin-top: 3rem; margin-bottom: 3rem; color: var(--muted); font-size: .85rem; text-align: center; }
+  .sources { color: var(--muted); font-size: .85rem; text-align: center;}
   .lang { display: none; }
   .lang.active, #start.active { display: block; }
   #start { display: none; text-align: center; padding-top: 22vh; }
@@ -55,6 +66,7 @@
 <section id="start">
   <h1>Sprachschätze</h1>
   <p class="tagline">Scanne einen der Codes auf deinen Kärtchen,<br>um eine Sprache zu entdecken.</p>
+   <footer>Frohe Weihnachten! 🎄</footer>
 </section>
 
 <!-- ================= 1. TOKI PONA (fertig als Vorlage) ================= -->
@@ -69,18 +81,27 @@
 
   <h2>Worum geht es?</h2>
   <p>Toki Pona wurde von der Sprachwissenschaftlerin und Übersetzerin Sonja Lang entworfen. Die Idee: Wenn eine Sprache nur das Wesentliche kennt, denkt man einfacher und positiver. Statt tausender Spezialwörter gibt es wenige Grundbausteine, die man kombiniert.</p>
-  <figure>
-    <img src="img/tokipona-1.jpg" alt="Toki-Pona-Schrift Sitelen Pona" onerror="this.parentNode.style.display='none'">
-    <figcaption>BILDUNTERSCHRIFT 1 (Bild: img/tokipona-1.jpg)</figcaption>
-  </figure>
+  
   <p>Aus „Freund“ wird zum Beispiel <em>jan pona</em>, wörtlich „guter Mensch“. Die Sprache lässt sich in wenigen Stunden lernen. Beim Sprechen merkt man aber schnell, wie viel Kreativität sie verlangt.</p>
+  
+  <div class="example"><div class="l">Toki Pona hat mehrere Hyroglyphische Alphabete,</div><div class="t">darunter das beliebteste "Sitelen Pona". Meist wird allerdings das lateinische Alphabet verwendet.</div></div>
+  
+  <div style="display: flex; flex-direction: row; gap: 10px; align-items: flex-start;">
+      <figure style="flex: calc(666 / 1000); min-width: 0; margin: 0;">
+        <img src="https://m.media-amazon.com/images/I/51UGifIDjML._AC_UF894,1000_QL80_.jpg" style="width: 100%; height: auto; display: block;" alt="Toki Pona Buch" onerror="this.parentNode.style.display='none'">
+        <figcaption>Buch von Sonja Lang "Toki Pona - The Language of Good" [1]</figcaption>
+      </figure>
+      <figure style="flex: calc(2339 / 3071); min-width: 0; margin: 0;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Toki_pona_sitelen_pona.png" style="width: 100%; height: auto; display: block;" alt="Toki Pona Alphabet" onerror="this.parentNode.style.display='none'">
+        <figcaption>Das Toki-Pona Alphabet "Sitelen Pona" [2]</figcaption>
+      </figure>
+    </div>
+
 
   <h2>Was ist besonders?</h2>
-  <ul>
-    <li><strong>Keine Zeiten, keine Mehrzahl, keine Artikel.</strong> Ein Wort bleibt immer gleich.</li>
-    <li><strong>Wortarten sind flexibel.</strong> Dasselbe Wort kann Nomen, Verb oder Adjektiv sein, je nach Stellung.</li>
-    <li><strong>Nur 14 Laute</strong>, ausgesprochen so, wie man sie schreibt.</li>
-  </ul>
+  <div class="example"><div class="l">Keine Zeiten, keine Mehrzahl, keine Artikel.</div><div class="t">Ein Wort bleibt immer gleich.</div></div>
+  <div class="example"><div class="l">Wortarten sind flexibel.</div><div class="t">Dasselbe Wort kann Nomen, Verb oder Adjektiv sein, je nach Stellung.</div></div>
+  <div class="example"><div class="l">Nur 14 Laute,</div><div class="t">ausgesprochen so, wie man sie schreibt.</div></div>
 
   <h2>Mini-Grammatik</h2>
   <p>Der Satzbau ist immer <strong>Subjekt – <em>li</em> – Prädikat</strong>. Nach <em>mi</em> (ich) und <em>sina</em> (du) entfällt <em>li</em>. Das Objekt wird mit <strong><em>e</em></strong> markiert.</p>
@@ -103,10 +124,12 @@
     <tr><td>sona</td><td>wissen, Wissen</td></tr>
   </table>
 
-  <h2>Dein Mini-Rätsel</h2>
+  <h2>Mini-Rätsel</h2>
   <p>Was könnte <em>telo nasa</em> heißen? („nasa“ = seltsam, verrückt)</p>
   <p style="margin-top: 300px;"> Die Auflösung: ein Wort für Alkohol, wörtlich „verrücktes Wasser“.</p>
-  <footer>Frohe Weihnachten! 🎄</footer>
+
+  <h2>Quellen</h2>
+  <dev class="sources">[1] https://m.media-amazon.com/images/I/51UGifIDjML._AC_UF894,1000_QL80_.jpg<br>[2] https://upload.wikimedia.org/wikipedia/commons/a/ab/Toki_pona_sitelen_pona.png</dev>
 </section>
 
 <!-- ================= PLATZHALTER 2–10 =================
@@ -206,6 +229,7 @@
     const id = decodeURIComponent(location.hash.slice(1)).toLowerCase();
     const el = id ? document.getElementById(id) : null;
     const target = el && el.classList.contains('lang') ? el : null;
+    document.documentElement.dataset.lang = target ? id : '';
     document.querySelectorAll('.lang, #start').forEach(s => s.classList.remove('active'));
     (target || document.getElementById('start')).classList.add('active');
     if (target) document.title = target.querySelector('h1').textContent + ' · Sprachschätze';
