@@ -56,6 +56,33 @@
   .sources { color: var(--muted); font-size: .85rem; text-align: center;}
   .lang { display: none; }
   .lang.active, #start.active { display: block; }
+  .flip {
+    display: block; width: 100%; margin: 1.2rem 0; padding: 0;
+    background: none; border: 0; font: inherit; color: inherit;
+    text-align: left; cursor: pointer; perspective: 1000px;
+  }
+  .flip-inner {
+    display: grid;
+    transition: transform .6s;
+    transform-style: preserve-3d;
+  }
+  .flip.flipped .flip-inner { transform: rotateY(180deg); }
+  .flip-face {
+    grid-area: 1 / 1;
+    backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 1.2rem 1.4rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  }
+  .flip-back { transform: rotateY(180deg); border-color: var(--accent); }
+  .flip-label {
+    font: 600 .75rem system-ui, sans-serif; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 .5rem;
+  }
+  .flip-face p { margin: 0 0 .5rem; }
+  .flip-hint { color: var(--muted); font: .8rem system-ui, sans-serif; margin: .8rem 0 0 !important; }
+  .flip:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 12px; }
+  @media (prefers-reduced-motion: reduce) { .flip-inner { transition: none; } }
   #start { display: none; text-align: center; padding-top: 22vh; }
 </style>
 </head>
@@ -125,11 +152,24 @@
   </table>
 
   <h2>Mini-Rätsel</h2>
-  <p>Was könnte <em>telo nasa</em> heißen? („nasa“ = seltsam, verrückt)</p>
-  <p style="margin-top: 300px;"> Die Auflösung: ein Wort für Alkohol, wörtlich „verrücktes Wasser“.</p>
+  <button class="flip" type="button" aria-pressed="false">
+    <span class="flip-inner">
+      <span class="flip-face flip-front">
+        <p class="flip-label">Rätsel</p>
+        <p>Was könnte <em>telo nasa</em> heißen?<br>
+          („nasa“ = seltsam, verrückt)</p>
+        <p class="flip-hint">Tippen zum Umdrehen ↻</p>
+      </span>
+      <span class="flip-face flip-back">
+        <p class="flip-label">Lösung</p>
+        <p>Alkohol, wörtlich „verrücktes Wasser“.</p>
+        <p class="flip-hint">Tippen zum Zurückdrehen ↻</p>
+      </span>
+    </span>
+  </button>
 
   <h2>Quellen</h2>
-  <dev class="sources">[1] https://m.media-amazon.com/images/I/51UGifIDjML._AC_UF894,1000_QL80_.jpg<br>[2] https://upload.wikimedia.org/wikipedia/commons/a/ab/Toki_pona_sitelen_pona.png</dev>
+  <div class="sources">[1] https://m.media-amazon.com/images/I/51UGifIDjML._AC_UF894,1000_QL80_.jpg<br>[2] https://upload.wikimedia.org/wikipedia/commons/a/ab/Toki_pona_sitelen_pona.png</div>
 </section>
 
 <!-- ================= PLATZHALTER 2–10 =================
@@ -236,6 +276,12 @@
     window.scrollTo(0, 0);
   }
   window.addEventListener('hashchange', route);
+  document.querySelectorAll('.flip').forEach(card => {
+    card.addEventListener('click', () => {
+      const on = card.classList.toggle('flipped');
+      card.setAttribute('aria-pressed', on);
+    });
+  });
   route();
 </script>
 </body>
