@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sprachschätze</title>
+<style>
+  :root {
+    --bg: #faf6ef; --fg: #2b2622; --muted: #7a6f64;
+    --accent: #b3342b; --card: #ffffff; --line: #e6dccd;
+  }
+  /*@media (prefers-color-scheme: dark) {
+    :root { --bg: #1d1a17; --fg: #f1e9dd; --muted: #a79a8a;
+            --accent: #e5675c; --card: #28241f; --line: #3a342d; }
+  }*/
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 18px/1.65 Arial, Helvetica, sans-serif;
+  }
+  main { max-width: 38rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  h1 { font-size: 2.2rem; line-height: 1.15; margin: 1.5rem 0 .3rem; }
+  h2 { font-size: 1.35rem; margin: 2.2rem 0 .6rem; color: var(--accent);
+       border-bottom: 1px solid var(--line); padding-bottom: .25rem; }
+  .tagline { color: var(--muted); font-style: italic; margin: 0 0 1rem; }
+  .facts { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 1.5rem;
+           padding: 0; list-style: none; font: 14px system-ui, sans-serif; }
+  .facts li { background: var(--card); border: 1px solid var(--line);
+              border-radius: 999px; padding: .25rem .8rem; }
+  figure { margin: 1.4rem 0; }
+  figure img { width: 100%; border-radius: 10px; display: block; }
+  figcaption { font-size: .85rem; color: var(--muted); margin-top: .35rem; }
+  .example { background: var(--card); border-left: 4px solid var(--accent);
+             border-radius: 6px; padding: .6rem 1rem; margin: .8rem 0; }
+  .example .l { font-weight: bold; }
+  .example .t { color: var(--muted); font-size: .95rem; }
+  table { width: 100%; border-collapse: collapse; margin: .8rem 0;
+          font: 16px system-ui, sans-serif; }
+  th, td { text-align: left; padding: .45rem .5rem; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; font-size: .85rem;
+       text-transform: uppercase; letter-spacing: .04em; }
+  td:first-child { font-weight: 600; }
+  .todo { color: var(--muted); font-style: italic; }
+  footer { margin-top: 3rem; color: var(--muted); font-size: .85rem; text-align: center; }
+  .lang { display: none; }
+  .lang.active, #start.active { display: block; }
+  #start { display: none; text-align: center; padding-top: 22vh; }
+</style>
+</head>
+<body>
+<main>
+
+<!-- ================= STARTSEITE (kein Link zu Sprachen) ================= -->
+<section id="start">
+  <h1>Sprachschätze</h1>
+  <p class="tagline">Scanne einen der Codes auf deinen Kärtchen,<br>um eine Sprache zu entdecken.</p>
+</section>
+
+<!-- ================= 1. TOKI PONA (fertig als Vorlage) ================= -->
+<section class="lang" id="tokipona">
+  <h1>Toki Pona</h1>
+  <p class="tagline">Die Sprache des Guten</p>
+  <ul class="facts">
+    <li>Erfunden 2001 in Kanada</li>
+    <li>ca. 120–137 Wörter</li>
+    <li>ca. 3000 Sprecher</li>
+  </ul>
+
+  <h2>Worum geht es?</h2>
+  <p>Toki Pona wurde von der Sprachwissenschaftlerin und Übersetzerin Sonja Lang entworfen. Die Idee: Wenn eine Sprache nur das Wesentliche kennt, denkt man einfacher und positiver. Statt tausender Spezialwörter gibt es wenige Grundbausteine, die man kombiniert.</p>
+  <figure>
+    <img src="img/tokipona-1.jpg" alt="Toki-Pona-Schrift Sitelen Pona" onerror="this.parentNode.style.display='none'">
+    <figcaption>BILDUNTERSCHRIFT 1 (Bild: img/tokipona-1.jpg)</figcaption>
+  </figure>
+  <p>Aus „Freund“ wird zum Beispiel <em>jan pona</em>, wörtlich „guter Mensch“. Die Sprache lässt sich in wenigen Stunden lernen. Beim Sprechen merkt man aber schnell, wie viel Kreativität sie verlangt.</p>
+
+  <h2>Was ist besonders?</h2>
+  <ul>
+    <li><strong>Keine Zeiten, keine Mehrzahl, keine Artikel.</strong> Ein Wort bleibt immer gleich.</li>
+    <li><strong>Wortarten sind flexibel.</strong> Dasselbe Wort kann Nomen, Verb oder Adjektiv sein, je nach Stellung.</li>
+    <li><strong>Nur 14 Laute</strong>, ausgesprochen so, wie man sie schreibt.</li>
+  </ul>
+
+  <h2>Mini-Grammatik</h2>
+  <p>Der Satzbau ist immer <strong>Subjekt – <em>li</em> – Prädikat</strong>. Nach <em>mi</em> (ich) und <em>sina</em> (du) entfällt <em>li</em>. Das Objekt wird mit <strong><em>e</em></strong> markiert.</p>
+  <div class="example"><div class="l">mi moku.</div><div class="t">Ich esse.</div></div>
+  <div class="example"><div class="l">jan li pona.</div><div class="t">Der Mensch ist gut.</div></div>
+  <div class="example"><div class="l">mi wile e telo.</div><div class="t">Ich will Wasser.</div></div>
+  <div class="example"><div class="l">sina sona e toki pona.</div><div class="t">Du kennst Toki Pona.</div></div>
+
+  <h2>Die ersten Wörter</h2>
+  <table>
+    <tr><th>Toki Pona</th><th>Bedeutung</th></tr>
+    <tr><td>toki</td><td>Sprache, sprechen</td></tr>
+    <tr><td>pona</td><td>gut, einfach</td></tr>
+    <tr><td>mi / sina</td><td>ich / du</td></tr>
+    <tr><td>jan</td><td>Mensch, Person</td></tr>
+    <tr><td>moku</td><td>essen, Essen</td></tr>
+    <tr><td>telo</td><td>Wasser, Flüssigkeit</td></tr>
+    <tr><td>tomo</td><td>Haus, Raum</td></tr>
+    <tr><td>suli / lili</td><td>groß / klein</td></tr>
+    <tr><td>sona</td><td>wissen, Wissen</td></tr>
+  </table>
+
+  <h2>Dein Mini-Rätsel</h2>
+  <p>Was könnte <em>telo nasa</em> heißen? („nasa“ = seltsam, verrückt)</p>
+  <p style="margin-top: 300px;"> Die Auflösung: ein Wort für Alkohol, wörtlich „verrücktes Wasser“.</p>
+  <footer>Frohe Weihnachten! 🎄</footer>
+</section>
+
+<!-- ================= PLATZHALTER 2–10 =================
+     Kopiere bei Bedarf die Struktur oben (Bilder, Beispiele, Tabelle). -->
+<section class="lang" id="silbo">
+  <h1>Silbo Gomero</h1>
+  <p class="tagline todo">Tagline einfügen</p>
+  <ul class="facts"><li>Fakt 1</li><li>Fakt 2</li></ul>
+  <h2>Worum geht es?</h2><p class="todo">Einführungstext + Bilder</p>
+  <h2>Was ist besonders?</h2><p class="todo">…</p>
+  <h2>Mini-Grammatik</h2><p class="todo">…</p>
+  <h2>Die ersten Wörter</h2><p class="todo">…</p>
+</section>
+
+<section class="lang" id="georgisch">
+  <h1>Georgisch</h1>
+  <p class="tagline todo">Tagline einfügen</p>
+  <ul class="facts"><li>Fakt 1</li><li>Fakt 2</li></ul>
+  <h2>Worum geht es?</h2><p class="todo">Einführungstext + Bilder</p>
+  <h2>Was ist besonders?</h2><p class="todo">…</p>
+  <h2>Mini-Grammatik</h2><p class="todo">…</p>
+  <h2>Die ersten Wörter</h2><p class="todo">…</p>
+</section>
+
+<section class="lang" id="xhosa">
+  <h1>isiXhosa</h1>
+  <p class="tagline todo">Tagline einfügen</p>
+  <ul class="facts"><li>Fakt 1</li><li>Fakt 2</li></ul>
+  <h2>Worum geht es?</h2><p class="todo">Einführungstext + Bilder</p>
+  <h2>Was ist besonders?</h2><p class="todo">…</p>
+  <h2>Mini-Grammatik</h2><p class="todo">…</p>
+  <h2>Die ersten Wörter</h2><p class="todo">…</p>
+</section>
+
+<section class="lang" id="navajo">
+  <h1>Navajo (Diné bizaad)</h1>
+  <p class="tagline todo">Tagline einfügen</p>
+  <ul class="facts"><li>Fakt 1</li><li>Fakt 2</li></ul>
+  <h2>Worum geht es?</h2><p class="todo">Einführungstext + Bilder</p>
+  <h2>Was ist besonders?</h2><p class="todo">…</p>
+  <h2>Mini-Grammatik</h2><p class="todo">…</p>
+  <h2>Die ersten Wörter</h2><p class="todo">…</p>
+</section>
+
+<section class="lang" id="klingonisch">
+  <h1>Klingonisch (tlhIngan Hol)</h1>
+  <p class="tagline todo">Tagline einfügen</p>
+  <ul class="facts"><li>Fakt 1</li><li>Fakt 2</li></ul>
+  <h2>Worum geht es?</h2><p class="todo">Einführungstext + Bilder</p>
+  <h2>Was ist besonders?</h2><p class="todo">…</p>
+  <h2>Mini-Grammatik</h2><p class="todo">…</p>
+  <h2>Die ersten Wörter</h2><p class="todo">…</p>
+</section>
+
+<section class="lang" id="lojban">
+  <h1>Lojban</h1>
+  <p class="tagline todo">Tagline einfügen</p>
+  <ul class="facts"><li>Fakt 1</li><li>Fakt 2</li></ul>
+  <h2>Worum geht es?</h2><p class="todo">Einführungstext + Bilder</p>
+  <h2>Was ist besonders?</h2><p class="todo">…</p>
+  <h2>Mini-Grammatik</h2><p class="todo">…</p>
+  <h2>Die ersten Wörter</h2><p class="todo">…</p>
+</section>
+
+<section class="lang" id="tokpisin">
+  <h1>Tok Pisin</h1>
+  <p class="tagline todo">Tagline einfügen</p>
+  <ul class="facts"><li>Fakt 1</li><li>Fakt 2</li></ul>
+  <h2>Worum geht es?</h2><p class="todo">Einführungstext + Bilder</p>
+  <h2>Was ist besonders?</h2><p class="todo">…</p>
+  <h2>Mini-Grammatik</h2><p class="todo">…</p>
+  <h2>Die ersten Wörter</h2><p class="todo">…</p>
+</section>
+
+<section class="lang" id="warlpiri">
+  <h1>Warlpiri</h1>
+  <p class="tagline todo">Tagline einfügen</p>
+  <ul class="facts"><li>Fakt 1</li><li>Fakt 2</li></ul>
+  <h2>Worum geht es?</h2><p class="todo">Einführungstext + Bilder</p>
+  <h2>Was ist besonders?</h2><p class="todo">…</p>
+  <h2>Mini-Grammatik</h2><p class="todo">…</p>
+  <h2>Die ersten Wörter</h2><p class="todo">…</p>
+</section>
+
+<section class="lang" id="sprache10">
+  <h1>Sprache 10</h1>
+  <p class="tagline todo">Noch offen – Vorschläge: Baskisch, Ainu, Hawaiianisch, Ithkuil …</p>
+  <h2>Worum geht es?</h2><p class="todo">…</p>
+</section>
+
+</main>
+
+<script>
+  // Zeigt nur die Sektion, die zum Anker (#...) passt.
+  // Unbekannter oder fehlender Anker -> neutrale Startseite.
+  function route() {
+    const id = decodeURIComponent(location.hash.slice(1)).toLowerCase();
+    const el = id ? document.getElementById(id) : null;
+    const target = el && el.classList.contains('lang') ? el : null;
+    document.querySelectorAll('.lang, #start').forEach(s => s.classList.remove('active'));
+    (target || document.getElementById('start')).classList.add('active');
+    if (target) document.title = target.querySelector('h1').textContent + ' · Sprachschätze';
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', route);
+  route();
+</script>
+</body>
+</html>
